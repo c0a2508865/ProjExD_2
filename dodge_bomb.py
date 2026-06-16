@@ -15,9 +15,11 @@ DELTA = {
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 def check_bound(rct: pg.Rect) -> tuple[bool, bool]:
-    #引数：こうかとんRect or 爆弾Rect
-    #戻り値：(横方向判定, 縦方向判定)
-    #True：画面内 / False：画面外
+    """
+    引数：こうかとんRect or 爆弾Rect
+    戻り値：(横方向判定, 縦方向判定)
+    True：画面内 / False：画面外
+    """
     yoko, tate = True, True
 
     if rct.left < 0 or WIDTH < rct.right:
@@ -29,7 +31,9 @@ def check_bound(rct: pg.Rect) -> tuple[bool, bool]:
     return yoko, tate
 
 def gameover(screen: pg.Surface) -> None:
-    #ゲームオーバー画面を表示
+    """
+    ゲームオーバー画面を表示
+    """
     black = pg.Surface((WIDTH, HEIGHT))
     black.fill((0, 0, 0))
     black.set_alpha(200)
@@ -58,7 +62,9 @@ def gameover(screen: pg.Surface) -> None:
     time.sleep(5)
 
 def init_bb_imgs() -> tuple[list[pg.Surface], list[int]]:
-    #爆弾画像リストと加速度リストを生成
+    """
+    爆弾画像リストと加速度リストを生成
+    """
     bb_imgs = []
 
     for r in range(1, 11):

@@ -123,8 +123,9 @@ def main():
             kk_rct.move_ip(-sum_mv[0], -sum_mv[1])
 
         screen.blit(kk_img, kk_rct)
-
-        # 爆弾の拡大・加速
+        """
+         爆弾の拡大・加速
+        """
         idx = min(tmr//500, 9)
         avx = vx * bb_accs[idx]
         avy = vy * bb_accs[idx]
